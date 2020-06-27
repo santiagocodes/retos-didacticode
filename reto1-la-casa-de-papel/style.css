@@ -1,0 +1,113 @@
+html {
+   box-sizing: border-box;
+   background: url('https://i.postimg.cc/Kz8JG9GP/money-heist-la-casa-de-papel-fondo-de-pantana-wallpaper.jpg')
+      bottom center;
+   background-size: cover;
+   min-height: 100vh;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   text-align: center;
+   font-family: Futura, 'Trebuchet MS', Arial, sans-serif;
+}
+
+.wrapper-box {
+   padding: 10px 20px 20px 20px;
+   max-width: 450px;
+   border-radius: 5px;
+   background: rgba(255, 255, 255, 0.8);
+   box-shadow: 0 0 2px 10px rgba(255, 255, 255, 0.4);
+}
+
+.alert {
+   background: rgba(150, 100, 100, 0.9);
+   box-shadow: 0 0 2px 10px rgba(255, 0, 0, 0.4);
+}
+
+h1 {
+   text-align: center;
+   margin: 0;
+   font-weight: 400;
+   padding: 1em;
+   color: #333;
+}
+
+.alert-h1 {
+   color: #ddd;
+   text-shadow: 2px 2px rgba(255, 0, 0, 0.4);
+   text-transform: uppercase;
+}
+
+h2 {
+   text-align: center;
+   margin: 0;
+   font-weight: 900;
+   padding-bottom: 0.5em;
+   color: #eee;
+   text-shadow: 2px 2px #000;
+   font-size: 2rem;
+}
+
+h2 span {
+   background: #f00;
+   font-size: 0.65em;
+   padding: 0.15em;
+   vertical-align: middle;
+}
+
+form {
+   margin-top: 20px;
+}
+
+form input {
+   padding: 10px;
+   outline: 0;
+   border: 1px solid rgba(0, 0, 0, 0.1);
+   background-color: white;
+}
+
+form button {
+   padding: 10px;
+   outline: 0;
+   border: 1px solid rgba(0, 0, 0, 0.1);
+   background-color: #d00;
+   color: #fff;
+}
+
+form button:hover {
+   border: 1px solid rgba(255, 255, 255, 0.3);
+   background-color: #f00;
+   color: #fff;
+}
+
+form button:active {
+   background-color: #f00;
+   color: #fff;
+}
+
+.div__resultado {
+   padding: 1em;
+   min-width: 120px;
+   width: auto;
+   min-height: 75px;
+   display: inline-block;
+}
+
+.link__reto {
+   position: absolute;
+   top: 1em;
+   right: 1em;
+   padding: 0.5em;
+   border-radius: 10px;
+   color: #fff;
+   text-shadow: 1px 1px #000;
+   background: rgba(255, 255, 255, 0.8);
+   box-shadow: 0 0 0 5px rgba(255, 255, 255, 0.4);
+   text-decoration: none;
+}
+
+.link__reto:hover {
+   color: #000;
+   text-shadow: 1px 1px #fff;
+   box-shadow: 0 0 0 6px rgba(255, 255, 255, 0.6);
+}
