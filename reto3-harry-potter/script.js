@@ -1,13 +1,10 @@
 console.log('Reto3: Harry Potter');
 
 const stationName = document.querySelector('.station__name');
-const inputIn = document.querySelector('.passangers__in');
-const inputOut = document.querySelector('.passangers__out');
+const passengersIn = document.querySelector('.passengers__in');
+const passengersOut = document.querySelector('.passengers__out');
 const buttonAddPassengers = document.querySelector('.button__add-passengers');
-const buttonTotal = document.querySelector('.button__total');
-const pTotal = document.querySelector('.p__total');
-
-var data = [];
+const passengersTotal = document.querySelector('.passengers__total');
 
 var stations = [
    "King's Cross Station",
@@ -17,43 +14,62 @@ var stations = [
    'Hogsmead Station',
 ];
 
+var passengerLog = [];
+
+function submitPassengerLog() {
+   addToPassengerLog();
+   calculatePassengersTotal();
+   clearInputs();
+
+   stationIndex++;
+   nextStation(stationIndex);
+}
+
+function addToPassengerLog() {
+   let passengersInNumber = parseInt(passengersIn.value, 10);
+   let passengersOutNumber = parseInt(passengersOut.value, 10);
+
+   if (passengersInNumber && passengersOutNumber) {
+      return passengerLog.push([passengersInNumber, passengersOutNumber]);
+   } else if (passengersInNumber && !passengersOutNumber) {
+      return passengerLog.push([passengersInNumber, 0]);
+   } else if (!passengersInNumber && passengersOutNumber) {
+      return passengerLog.push([0, passengersOutNumber]);
+   } else {
+      return passengerLog.push([1, 1]);
+   }
+}
+
+function calculatePassengersTotal() {
+   let passegersTotalNumber = passengerLog.reduce((acc, passengers) => {
+      return (acc += passengers[0] - passengers[1]);
+   }, 0);
+
+   if (stationIndex == stationLength - 2) {
+      return (passengersTotal.innerHTML = `${passegersTotalNumber} passengers made it to Hogwarts.`);
+   } else {
+      return (passengersTotal.innerHTML = `Passengers onboard: ${passegersTotalNumber}`);
+   }
+}
+
+function clearInputs() {
+   passengersIn.value = '';
+   passengersOut.value = '';
+}
+
 let stationIndex = 0;
 let stationLength = stations.length;
 
-stationName.innerHTML = stations[stationIndex];
-
 function nextStation(stationIndex) {
+   if (stationIndex == stationLength - 2) {
+      buttonAddPassengers.textContent = 'Last Station Coming Up';
+   } else if (stationIndex == stationLength - 1) {
+      buttonAddPassengers.textContent = 'End of Journey';
+      buttonAddPassengers.disabled = true;
+   }
    return (stationName.innerHTML = stations[stationIndex]);
 }
 
-nextStation(0);
+nextStation(stationIndex);
 
-function clearInputs() {
-   inputIn.value = '';
-   inputOut.value = '';
-}
-
-function addData(e) {
-   e.preventDefault();
-   let input1 = parseInt(inputIn.value, 10);
-   let input2 = parseInt(inputOut.value, 10);
-
-   data.push([input1, input2]);
-
-   //    stationIndex++;
-   nextStation(stationIndex++);
-   clearInputs();
-   console.log(data);
-   return data;
-}
-
-function pasajerosTotal() {
-   let pasajerosFinales = data.reduce((acc, pasajeros) => {
-      return (acc += pasajeros[0] - pasajeros[1]);
-   }, 0);
-   console.log(data, pasajerosFinales);
-   return (pTotal.innerHTML = pasajerosFinales);
-}
-
-buttonAddPassengers.addEventListener('click', addData);
-buttonTotal.addEventListener('click', pasajerosTotal);
+buttonAddPassengers.addEventListener('click', submitPassengerLog);

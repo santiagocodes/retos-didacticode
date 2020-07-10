@@ -2,27 +2,100 @@
 *:before,
 *:after {
    box-sizing: inherit;
+   margin: 0;
 }
 
 html {
    box-sizing: border-box;
-   background: url('https://i.postimg.cc/L6FY0z1P/brick-wall.jpg') bottom center;
+   background: url('https://i.postimg.cc/L6FY0z1P/brick-wall.jpg') center center;
    background-size: cover;
+   box-shadow: inset 0 0 0 1000px rgba(255, 255, 255, 0.25);
    min-height: 100vh;
    display: flex;
    justify-content: center;
    /*   align-items: center; */
    color: white;
    text-align: center;
-   font-family: lato, Arial, sans-serif;
+   font-family: ;
 }
 
 img {
    width: 25rem;
+   margin: 1em;
 }
 
-input {
+h1,
+p {
+   mix-blend-mode: color-dodge;
+   font-size: 2.5em;
    text-align: center;
+   /* margin: 0; */
+   /* padding: 20vh 200px; */
+   color: rgb(221, 169, 105);
+   /* text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000; */
+   /* text-shadow: -1px -1px 0 #333, 1px -1px 0 #333, -1px 1px 0 #333, 1px 1px 0 #333; */
+}
+
+p {
+   font-size: 1.8em;
+   font-weight: 600;
+}
+
+.passengers__total {
+   mix-blend-mode: normal;
+   color: rgb(255, 255, 172);
+   text-shadow: -1px -1px 0 rgb(191, 132, 62), 1px -1px 0 rgb(191, 132, 62),
+      -1px 1px 0 rgb(191, 132, 62), 1px 1px 0 rgb(191, 132, 62);
+}
+
+table {
+   margin-top: 1em;
+   color: rgb(255, 255, 172);
+   text-shadow: -1px -1px 0 rgb(191, 132, 62), 1px -1px 0 rgb(191, 132, 62),
+      -1px 1px 0 rgb(191, 132, 62), 1px 1px 0 rgb(191, 132, 62);
+   border-collapse: collapse;
+}
+
+th,
+td {
+   width: 25vw;
+   text-align: center;
+   padding-top: 0.2em;
+   /* border: 1px solid black; */
+}
+
+th {
+   padding-top: 1em;
+}
+
+input,
+.station__name,
+.button__add-passengers {
+   padding: 8px;
+   margin: 0;
+   text-align: center;
+   appearance: none;
+   width: 80%;
+   /* border: 1px solid fade(rgb(255, 255, 172), 40%); */
+   background-color: rgba(115, 30, 9, 1);
+   box-shadow: 0 2px 4px -1px rgb(255, 255, 172);
+   /* mix-blend-mode: color-dodge; */
+   border-radius: 3px;
+   font-weight: 900;
+   font-size: 1em;
+   letter-spacing: 0.2em;
+   transform: skewX(-10deg);
+}
+
+input,
+.button__add-passengers {
+   color: rgb(245, 186, 130);
+   transform: skewX(-10deg);
+}
+
+.button__add-passengers {
+   width: 100%;
+   margin-top: 2em;
 }
 
 /* CSS for 'Reto' button @bottom  */

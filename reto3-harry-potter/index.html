@@ -11,31 +11,51 @@
       <main>
          <img src="https://i.postimg.cc/PJQ3jjzZ/hogwarts-express.jpg" />
          <section>
-            <h1>Passanger Log</h1>
+            <h1>Passenger Log</h1>
             <p>
                From: <u>London</u> To:
-               <u>Hogwarts School of Witchcraft and Wizardry</u>
+               <u>Hogwarts School</u>
             </p>
             <form>
                <table>
                   <tr>
-                     <th>Station</th>
+                     <th colspan="2">STATION</th>
+                  </tr>
+                  <tr>
+                     <td colspan="2" class="station__name"></td>
+                  </tr>
+                  <tr>
                      <th>IN</th>
                      <th>OUT</th>
                   </tr>
                   <tr>
-                     <td class="station__name"></td>
-                     <td><input class="passangers__in" type="number" min="0" /></td>
-                     <td><input class="passangers__out" type="number" min="0" /></td>
                      <td>
+                        <input
+                           class="passengers__in"
+                           type="number"
+                           min="0"
+                           required
+                        />
+                     </td>
+                     <td>
+                        <input
+                           class="passengers__out"
+                           type="number"
+                           min="0"
+                           value="0"
+                        />
+                     </td>
+                  </tr>
+                  <tr>
+                     <td colspan="2">
                         <button type="button" class="button__add-passengers">
                            Submit
                         </button>
                      </td>
                   </tr>
                </table>
-               <button type="button" class="button__total">Submit</button>
-               <p class="p__total"></p>
+               <br />
+               <p class="passengers__total"></p>
             </form>
          </section>
 
