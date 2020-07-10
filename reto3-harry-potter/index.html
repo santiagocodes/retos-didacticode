@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <base target="_blank" />
+      <title>Reto Harry Potter</title>
+      <link rel="stylesheet" href="style.css" />
+   </head>
+   <body>
+      <main>
+         <img src="https://i.postimg.cc/PJQ3jjzZ/hogwarts-express.jpg" />
+         <section>
+            <h1>Passanger Log</h1>
+            <p>
+               From: <u>London</u> To:
+               <u>Hogwarts School of Witchcraft and Wizardry</u>
+            </p>
+            <form>
+               <table>
+                  <tr>
+                     <th>Station</th>
+                     <th>IN</th>
+                     <th>OUT</th>
+                  </tr>
+                  <tr>
+                     <td class="station__name"></td>
+                     <td><input class="passangers__in" type="number" min="0" /></td>
+                     <td><input class="passangers__out" type="number" min="0" /></td>
+                     <td>
+                        <button type="button" class="button__add-passengers">
+                           Submit
+                        </button>
+                     </td>
+                  </tr>
+               </table>
+               <button type="button" class="button__total">Submit</button>
+               <p class="p__total"></p>
+            </form>
+         </section>
+
+         <a
+            class="reto"
+            target="_blank"
+            href="https://didacticode.com/reto-harry-potter/"
+            >Reto</a
+         >
+      </main>
+      <script src="script.js"></script>
+   </body>
+</html>

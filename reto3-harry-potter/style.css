@@ -1,0 +1,46 @@
+*,
+*:before,
+*:after {
+   box-sizing: inherit;
+}
+
+html {
+   box-sizing: border-box;
+   background: url('https://i.postimg.cc/L6FY0z1P/brick-wall.jpg') bottom center;
+   background-size: cover;
+   min-height: 100vh;
+   display: flex;
+   justify-content: center;
+   /*   align-items: center; */
+   color: white;
+   text-align: center;
+   font-family: lato, Arial, sans-serif;
+}
+
+img {
+   width: 25rem;
+}
+
+input {
+   text-align: center;
+}
+
+/* CSS for 'Reto' button @bottom  */
+
+.reto {
+   position: absolute;
+   bottom: 1em;
+   right: 1em;
+   padding: 0.5em;
+   border-radius: 20%;
+   color: rgba(253, 198, 115, 0.75);
+   background: rgba(115, 30, 9, 0.75);
+   box-shadow: 0 0 10px 5px rgba(229, 166, 86, 0.6);
+   text-decoration: none;
+}
+
+.reto:hover {
+   color: rgba(253, 198, 115, 0.95);
+   background: rgba(115, 30, 9, 0.95);
+   box-shadow: 0 0 15px 10px rgba(229, 166, 86, 0.8);
+}
