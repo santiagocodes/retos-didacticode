@@ -36,7 +36,7 @@ function addToPassengerLog() {
    } else if (!passengersInNumber && passengersOutNumber) {
       return passengerLog.push([0, passengersOutNumber]);
    } else {
-      return passengerLog.push([1, 1]);
+      return passengerLog.push([0, 0]);
    }
 }
 
@@ -46,7 +46,11 @@ function calculatePassengersTotal() {
    }, 0);
 
    if (stationIndex == stationLength - 2) {
-      return (passengersTotal.innerHTML = `${passegersTotalNumber} passengers made it to Hogwarts.`);
+      if (passegersTotalNumber === 1) {
+         return (passengersTotal.innerHTML = `${passegersTotalNumber} passenger made it to Hogwarts.`);
+      } else {
+         return (passengersTotal.innerHTML = `${passegersTotalNumber} passengers made it to Hogwarts.`);
+      }
    } else {
       return (passengersTotal.innerHTML = `Passengers onboard: ${passegersTotalNumber}`);
    }
