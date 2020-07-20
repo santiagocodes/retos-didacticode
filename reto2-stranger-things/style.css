@@ -16,7 +16,9 @@
 
 html {
    box-sizing: border-box;
-   background: url('https://i.blogs.es/df03d1/stranger-things-bosque/1366_2000.jpg');
+   background: lightgray
+      url('https://i.postimg.cc/wvxJFyNy/stranger-things-forest.jpg') no-repeat fixed
+      center;
    background-size: cover;
    min-height: 100vh;
    font-family: 'ITC Benguiat W01', 'Cochin';
@@ -58,12 +60,7 @@ main {
    position: absolute;
    width: 100%;
    height: 100%;
-   /* background: rgba(10,10,10,0.8); */
-   background-image: radial-gradient(
-      circle at center center,
-      rgb(71, 51, 51),
-      rgb(8, 8, 8)
-   );
+   background: rgba(10, 10, 10, 0.8);
    box-shadow: 0 0 10px 8px var(--color-red-light);
    border-radius: 5px;
    text-align: center;
@@ -73,6 +70,9 @@ main {
 
 /* CSS for the card__front  */
 .card__front {
+   background: url('https://i.postimg.cc/QNY4bYPf/upside-down-monster.jpg') center;
+   background-color: rgb(47, 60, 79);
+   background-blend-mode: screen;
    padding: 40px 20px;
 }
 
@@ -122,7 +122,7 @@ main {
    padding: 10px;
    outline: 0;
    border: 1px solid rgba(0, 0, 0, 0.1);
-   background-color: transparent;
+   background-color: rgba(10, 10, 10, 0.8);
    box-shadow: 0 0 5px 3px var(--color-red-lighter);
    color: white;
    border-radius: 10px;
