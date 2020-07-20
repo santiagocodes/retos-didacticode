@@ -392,7 +392,7 @@ function mostrarError() {
 My Solution:
 
 [![harry-potter-challenge.jpg](https://i.postimg.cc/y85zSf7S/harry-potter-challenge.jpg)](https://codepen.io/santiagocodes/pen/oNbdQma)
-[reto](https://codepen.io/santiagocodes/pen/oNbdQma)
+[demo](https://codepen.io/santiagocodes/pen/oNbdQma)
 
 Ada's Solutions:
 
