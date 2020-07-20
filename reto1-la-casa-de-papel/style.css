@@ -102,18 +102,18 @@ form button:active {
    color: #fff;
    text-shadow: 1px 1px #000;
    background: rgba(255, 255, 255, 0.8);
-   box-shadow: 0 0 0 5px rgba(255, 255, 255, 0.4);
+   box-shadow: 0 0 5px 5px rgba(255, 255, 255, 0.4);
    text-decoration: none;
 }
 
 .link__reto:hover {
    color: #000;
    text-shadow: 1px 1px #fff;
-   box-shadow: 0 0 0 6px rgba(255, 255, 255, 0.6);
+   box-shadow: 0 0 6px 6px rgba(255, 255, 255, 0.6);
 }
 
 .link__reto:active {
    color: #fff;
    text-shadow: 1px 1px #000;
-   box-shadow: 0 0 0 5px rgba(255, 255, 255, 0.4);
+   box-shadow: 0 0 5px 5px rgba(255, 255, 255, 0.4);
 }
