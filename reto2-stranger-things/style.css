@@ -1,0 +1,213 @@
+:root {
+   --level-one: translateZ(3rem);
+   --level-two: translateZ(5rem);
+   --level-three: translateZ(7rem);
+
+   --color-red: rgb(255, 0, 0);
+   --color-red-light: rgba(255, 0, 0, 0.75);
+   --color-red-lighter: rgba(255, 0, 0, 0.4);
+}
+
+*,
+*:before,
+*:after {
+   box-sizing: inherit;
+}
+
+html {
+   box-sizing: border-box;
+   background: url('https://i.blogs.es/df03d1/stranger-things-bosque/1366_2000.jpg');
+   background-size: cover;
+   min-height: 100vh;
+   font-family: 'ITC Benguiat W01', 'Cochin';
+}
+
+main {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   min-height: 100vh;
+}
+
+.title > img {
+   width: 300px;
+   margin: -10px 0px;
+}
+
+.card__container {
+   width: 350px;
+   height: 350px;
+   perspective: 1000px;
+}
+
+.card__content {
+   position: relative;
+   width: 100%;
+   height: 100%;
+   transform-style: preserve-3d;
+   transform-origin: center right;
+   transition: transform 3s;
+}
+
+.card__content.is-flipped {
+   transform: translateX(-100%) rotateY(-180deg);
+}
+
+.card__face {
+   /* .card__front, .card__back { */
+   position: absolute;
+   width: 100%;
+   height: 100%;
+   /* background: rgba(10,10,10,0.8); */
+   background-image: radial-gradient(
+      circle at center center,
+      rgb(71, 51, 51),
+      rgb(8, 8, 8)
+   );
+   box-shadow: 0 0 10px 8px var(--color-red-light);
+   border-radius: 5px;
+   text-align: center;
+   backface-visibility: hidden;
+   transform-style: preserve-3d;
+}
+
+/* CSS for the card__front  */
+.card__front {
+   padding: 40px 20px;
+}
+
+.card__front > h2 {
+   font-weight: 900;
+   padding-bottom: 0.5em;
+   text-align: center;
+   font-size: 2rem;
+   color: white;
+   text-shadow: -0.05rem -0.05rem 5px rgba(237, 43, 18, 1);
+   transform: var(--level-two);
+}
+
+.card__front > p {
+   position: fixed;
+   bottom: 18px;
+   font-weight: 600;
+   text-align: center;
+   font-size: 1rem;
+   color: white;
+   text-shadow: -0.05rem -0.05rem 5px rgba(237, 43, 18, 1);
+   transform: var(--level-one);
+   /* backface-visibility: hidden; */
+}
+
+.card__front > form {
+   margin-top: 25px;
+   transform: var(--level-three);
+}
+
+.card__front > form input {
+   padding: 10px;
+   /*   outline: 0; */
+   border: 1px solid rgba(0, 0, 0, 0.1);
+   background-color: #ddd;
+   box-shadow: 0 0 5px 3px var(--color-red-lighter);
+   border-radius: 5px;
+}
+
+.card__front > form input:hover {
+   background-color: #eee;
+   box-shadow: 0 0 7px 5px var(--color-red-lighter);
+}
+
+.btn {
+   margin: 5px;
+   padding: 10px;
+   outline: 0;
+   border: 1px solid rgba(0, 0, 0, 0.1);
+   background-color: transparent;
+   box-shadow: 0 0 5px 3px var(--color-red-lighter);
+   color: white;
+   border-radius: 10px;
+}
+
+.btn:hover {
+   background-color: #000;
+   box-shadow: 0 0 7px 5px var(--color-red-lighter);
+}
+
+.btn:active {
+   background-color: #333;
+}
+
+/* CSS for the card__back  */
+.btn__back {
+   margin: 0px;
+   padding: 0.5em;
+   background: rgba(10, 10, 10, 0.8);
+   position: absolute;
+   top: 2.5em;
+   right: 2.5em;
+   transform: var(--level-two);
+}
+
+.card__back {
+   transform: rotateY(180deg);
+   display: none;
+}
+
+.card__back.display {
+   display: block;
+}
+
+.card__back::before {
+   content: '';
+   position: absolute;
+   top: 0.75em;
+   bottom: 0.75em;
+   left: 0.75em;
+   right: 0.75em;
+   border: 1px solid var(--color-red);
+   border-radius: 5px;
+   transform: var(--level-one);
+}
+
+.image__back {
+   width: 100%;
+   height: 100%;
+   padding: 0.8em;
+   border-radius: 5px;
+}
+
+#card__back__one > p {
+   color: #111;
+   text-shadow: -0.05rem -0.05rem 5px rgba(237, 43, 18, 1);
+   font-size: 2em;
+   font-weight: 700;
+   text-align: center;
+   margin-top: -2.2em;
+   transform: var(--level-three);
+}
+
+/* CSS for 'Reto' button @bottom  */
+
+.reto {
+   position: absolute;
+   bottom: 1em;
+   right: 1em;
+   padding: 0.75em;
+   border-radius: 50%;
+   color: #fff;
+   background: rgba(20, 20, 20, 0.75);
+   box-shadow: 0 0 10px 5px rgba(255, 0, 0, 0.4);
+   text-decoration: none;
+   letter-spacing: 0.1em;
+}
+
+.reto:hover {
+   color: rgba(255, 0, 0, 0.9);
+   background: rgba(40, 20, 20, 0.4);
+}
+
+.dev-to {
+   bottom: 4.5em;
+   padding: 0.7em;
+   letter-spacing: 0em;
+}
