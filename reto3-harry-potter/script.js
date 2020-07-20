@@ -5,55 +5,66 @@ const passengersIn = document.querySelector('.passengers__in');
 const passengersOut = document.querySelector('.passengers__out');
 const buttonAddPassengers = document.querySelector('.button__add-passengers');
 const passengersTotal = document.querySelector('.passengers__total');
+const form = document.querySelector('form');
 
-var stations = [
-   "King's Cross Station",
-   'Waverly Station',
-   'Weasley Station',
-   'Cardiff Central Station',
-   'Hogsmead Station',
+const stations = [
+   "King's Cross",
+   'Waverly',
+   'Weasley',
+   'Cardiff Central',
+   'Hogsmeade',
 ];
 
-var passengerLog = [];
+const passengerLog = [];
 
-function submitPassengerLog() {
+function submitPassengerLog(e) {
+   e.preventDefault();
    addToPassengerLog();
-   calculatePassengersTotal();
-   clearInputs();
+   let totalPassengers = calculatePassengersTotal();
 
-   stationIndex++;
-   nextStation(stationIndex);
+   if (totalPassengers >= 0) {
+      // Display total number of passengers onboard.
+      // Change message on the last station to indicate arrival to Hogwarts.
+      if (stationIndex === stationLength - 2) {
+         passengersTotal.innerHTML = `${totalPassengers} passengers made it to Hogwarts.`;
+      } else {
+         passengersTotal.innerHTML = `Passengers onboard: ${totalPassengers}`;
+      }
+      // Clear input boxes.
+      clearInputs();
+      // Display next station
+      stationIndex++;
+      nextStation(stationIndex);
+   } else {
+      removeFromPassengerLog();
+      clearInputs();
+      window.confirm(
+         "Check how many witches and wizards are on the train. You can't have more of them leaving the train than are onboard."
+      );
+   }
 }
 
 function addToPassengerLog() {
-   let passengersInNumber = parseInt(passengersIn.value, 10);
-   let passengersOutNumber = parseInt(passengersOut.value, 10);
+   let passengersInValue = passengersIn.value;
+   let passengersOutValue = passengersOut.value;
 
-   if (passengersInNumber && passengersOutNumber) {
-      return passengerLog.push([passengersInNumber, passengersOutNumber]);
-   } else if (passengersInNumber && !passengersOutNumber) {
-      return passengerLog.push([passengersInNumber, 0]);
-   } else if (!passengersInNumber && passengersOutNumber) {
-      return passengerLog.push([0, passengersOutNumber]);
+   // Replace empty input boxes with 0 before adding to log
+   // Add last entry to the passenger log
+   // [ [passengersIn1,passengersOut1],[passengersIn2,passengersOut2]... ]
+   if (passengersInValue && passengersOutValue) {
+      return passengerLog.push([passengersInValue, passengersOutValue]);
+   } else if (passengersInValue && !passengersOutValue) {
+      return passengerLog.push([passengersInValue, 0]);
+   } else if (!passengersInValue && passengersOutValue) {
+      return passengerLog.push([0, passengersOutValue]);
    } else {
       return passengerLog.push([0, 0]);
    }
 }
 
-function calculatePassengersTotal() {
-   let passegersTotalNumber = passengerLog.reduce((acc, passengers) => {
-      return (acc += passengers[0] - passengers[1]);
-   }, 0);
-
-   if (stationIndex == stationLength - 2) {
-      if (passegersTotalNumber === 1) {
-         return (passengersTotal.innerHTML = `${passegersTotalNumber} passenger made it to Hogwarts.`);
-      } else {
-         return (passengersTotal.innerHTML = `${passegersTotalNumber} passengers made it to Hogwarts.`);
-      }
-   } else {
-      return (passengersTotal.innerHTML = `Passengers onboard: ${passegersTotalNumber}`);
-   }
+function removeFromPassengerLog() {
+   // Remove last entry from passenger log
+   return passengerLog.pop();
 }
 
 function clearInputs() {
@@ -61,10 +72,20 @@ function clearInputs() {
    passengersOut.value = '';
 }
 
+function calculatePassengersTotal() {
+   // Calculate number of passengers onboard.
+   return passengerLog.reduce((onboard, [boarding, disembarking]) => {
+      return (onboard += boarding - disembarking);
+   }, 0);
+}
+
 let stationIndex = 0;
 let stationLength = stations.length;
 
 function nextStation(stationIndex) {
+   // Display name of station.
+   // For the last two stations the text on the button will change.
+   // On the last station the button will be disabled.
    if (stationIndex == stationLength - 2) {
       buttonAddPassengers.textContent = 'Last Station Coming Up';
    } else if (stationIndex == stationLength - 1) {
@@ -76,4 +97,4 @@ function nextStation(stationIndex) {
 
 nextStation(stationIndex);
 
-buttonAddPassengers.addEventListener('click', submitPassengerLog);
+form.addEventListener('submit', submitPassengerLog);

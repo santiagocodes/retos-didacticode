@@ -9,120 +9,107 @@ html {
    box-sizing: border-box;
    background: url('https://i.postimg.cc/L6FY0z1P/brick-wall.jpg') center center;
    background-size: cover;
-   box-shadow: inset 0 0 0 1000px rgba(255, 255, 255, 0.25);
+   box-shadow: inset 0 0 0 1000px rgba(115, 30, 9, 0.3);
    min-height: 100vh;
-   width: 100%;
    display: flex;
    justify-content: center;
-   align-items: center;
-   color: white;
    text-align: center;
-   position: relative;
 }
 
 img {
-   width: 90vw;
-   max-width: 400px;
-   margin: 5vh;
+   width: 22rem;
+   max-width: 75vw;
+   margin: 1em 0;
 }
 
 h1,
 p {
-   mix-blend-mode: color-dodge;
-   font-size: 2.5em;
    text-align: center;
-   color: rgb(221, 169, 105);
+   color: rgba(255, 255, 172, 1);
+   text-shadow: -1px -1px 0 rgb(191, 132, 62), 1px -1px 0 rgb(191, 132, 62),
+      -1px 1px 0 rgb(191, 132, 62), 1px 1px 0 rgb(191, 132, 62);
+   letter-spacing: 0.1em;
+}
+
+h1 {
+   font-size: 2.5em;
 }
 
 p {
-   font-size: 1.75em;
-   font-weight: 600;
-}
-
-.passengers__total {
-   margin-bottom: 2em;
-   min-height: 2em;
-   mix-blend-mode: normal;
-   color: rgb(255, 255, 172);
-   text-shadow: -1px -1px 5px rgb(191, 132, 62), 1px -1px 5px rgb(191, 132, 62),
-      -1px 1px 5px rgb(191, 132, 62), 1px 1px 5px rgb(191, 132, 62);
-}
-
-table {
-   margin-top: 1em;
-   color: rgb(255, 255, 172);
-   text-shadow: -1px -1px 2px rgb(191, 132, 62), 1px -1px 2px rgb(191, 132, 62),
-      -1px 1px 2px rgb(191, 132, 62), 1px 1px 2px rgb(191, 132, 62);
-   border-collapse: collapse;
-   display: flex;
-   justify-content: center;
-}
-
-th,
-td {
-   width: 25vw;
-   text-align: center;
-   padding-top: 0.2em;
-   /* border: 1px solid black; */
-}
-
-th {
-   padding-top: 1em;
-}
-
-input,
-.station__name,
-.button__add-passengers {
-   padding: 8px;
-   margin: 0;
-   text-align: center;
-   appearance: none;
-   width: 80%;
-   /* border: 1px solid fade(rgb(255, 255, 172), 40%); */
-   background-color: rgba(115, 30, 9, 1);
-   box-shadow: 0 2px 4px -1px rgb(255, 255, 172);
-   /* mix-blend-mode: color-dodge; */
-   border-radius: 3px;
-   font-weight: 900;
-   font-size: 1em;
-   letter-spacing: 0.2em;
-   transform: skewX(-10deg);
-}
-
-.station__name {
    font-size: 1.25em;
 }
 
-input,
+.passengers__total {
+   font-size: 1.8em;
+   font-weight: 900;
+}
+
+table {
+   color: rgb(255, 255, 172);
+   text-transform: uppercase;
+   border-collapse: collapse;
+}
+
+th {
+   padding-top: 1.2em;
+}
+
+.passengers__in,
+.passengers__out,
+.station__name,
 .button__add-passengers {
-   color: rgb(245, 186, 130);
+   padding: 8px;
+   text-align: center;
+   font-weight: 900;
+   font-size: 1em;
+   letter-spacing: 0.2em;
+   color: rgba(245, 186, 130, 1);
+   appearance: none;
+   background-color: rgba(115, 30, 9, 1);
+   box-shadow: 0 2px 4px -1px rgb(255, 255, 172);
+   border-radius: 3px;
    transform: skewX(-10deg);
 }
 
-input:hover,
-.button__add-passengers:hover {
-   color: rgb(255, 196, 140);
-   background-color: rgba(115, 30, 9, 0.95);
-   box-shadow: 0 2px 8px -1px rgb(255, 255, 172);
+.input__in-out {
+   padding: 0 5vw;
+}
+
+input:hover {
+   background-color: rgba(105, 20, 0, 1);
+   color: rgba(255, 196, 140, 1);
+   box-shadow: 0 4px 8px -2px rgb(255, 255, 172);
 }
 
 .button__add-passengers {
    width: 100%;
-   margin-top: 2em;
+   margin-top: 2.5em;
+}
+
+.button__add-passengers:hover {
+   background-color: rgba(105, 20, 0, 1);
+   color: rgba(255, 196, 140, 1);
+   box-shadow: 0 4px 8px -2px rgb(255, 255, 172);
 }
 
 /* CSS for 'Reto' button @bottom  */
 
 .reto {
    position: absolute;
-   bottom: 1em;
-   right: 1em;
-   padding: 0.5em;
-   border-radius: 20%;
+   bottom: 0.8em;
+   right: 0.5em;
+   padding: 0.5em 0.75em;
+   border-radius: 10%;
    color: rgba(253, 198, 115, 0.75);
    background: rgba(115, 30, 9, 0.75);
    box-shadow: 0 0 10px 5px rgba(229, 166, 86, 0.6);
    text-decoration: none;
+}
+
+.dev-to {
+   bottom: 4em;
+   right: 0.5em;
+   padding: 0.5em;
 }
 
 .reto:hover {
