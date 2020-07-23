@@ -11,12 +11,21 @@ In this repository you can find my solutions to the challenges posted on this pl
 > Dear Ada, we are having terrible problems with the names of the robbers. We need you to create a program that, given a capital city, indicates whether it is one of the names chosen by The Professor for any of the members of his team or not. We need to have it within 10 days... too many hostages' lives are at stake!
 > -Translation of the original challenge.
 
-My Solution:
+#### My Solution:
 
 [![money-heist-challenge.png](https://i.postimg.cc/rpqJVTrV/money-heist-challenge.png)](https://codepen.io/santiagocodes/pen/jOWmxda)
 [demo](https://codepen.io/santiagocodes/pen/jOWmxda)
 
-Ada's Solutions:
+Features added (that were not part of the original challenge):
+
+-  'Red Alert' added. Box changes color to alert of a possible suspect.
+-  Input name will be changed so that capitalization nor unexpected spaces interfere when cross checking the name with our list of suspects.
+
+Features that could be improved/added in the future:
+
+-  A list of the names already checked.
+
+#### Ada's Solutions:
 
 ```html
 <!DOCTYPE html>
@@ -155,12 +164,23 @@ function validarCapital10(capital) {
 > Miss Ada: We need you to create a form that checks if Planck constant has been entered correctly. By the way, the constant is 6.62607015, although Suzie mentions an earlier version 6.62607004.
 > -Translation of the original challenge.
 
-My Solution:
+#### My Solution:
 
 [![stranger-things.jpg](https://i.postimg.cc/Mpw6p3KZ/stranger-things.jpg)](https://codepen.io/santiagocodes/pen/zYrwWed)
 [demo](https://codepen.io/santiagocodes/pen/zYrwWed)
 
-Ada's Solutions:
+Features added (that were not part of the original challenge):
+
+-  Flip card to show results.
+-  According to input you will get a different answer (multifaced back).
+-  Adding event listener to several elements that share the same class name.
+
+Features that could be improved/added in the future:
+
+-  Achieve Stranger Things logo with CSS instead of an image.
+-  Add translateZ property in CSS to get a 3D effect when flipping the card. Completed [here](https://codepen.io/santiagocodes/pen/qBbprZZ).
+
+#### Ada's Solutions:
 
 ```html
 <!DOCTYPE html>
@@ -389,12 +409,26 @@ function mostrarError() {
 > Note: In the first pair of numbers, the second will always be 0 because no one gets off at the first station. There is no need to check this number: we will always provide it to you correctly.
 > -Translation of the original challenge.
 
-My Solution:
+#### My Solution:
 
 [![harry-potter-challenge.jpg](https://i.postimg.cc/y85zSf7S/harry-potter-challenge.jpg)](https://codepen.io/santiagocodes/pen/oNbdQma)
 [demo](https://codepen.io/santiagocodes/pen/oNbdQma)
 
-Ada's Solutions:
+Features added (that were not part of the original challenge):
+
+-  User can input the number of passengers that board/disembark on a user interface.
+-  Once the user submits the number of passengers that boarded and disembarked the train the program will automatically display number of passengers on board and the name of the next station.
+-  If the input box is left empty, a zero will be placed on that input instead.
+-  If the total amount of passengers is negative the program will assume there was an error and will delete the last entry from the log. (It won't pass to the next station until an aceptable entry for the current station has been logged.)
+-  Submit button text will change to alert when the last station is coming up and when we have arrived to our destination.
+
+Features that could be improved/added in the future:
+
+-  Mobile optimization.
+-  Some sort of animation when station name text is being changed.
+-  At the end of the journey the submit button can be made to change course for a new journey or to clear everything and start from the first station again instead of just being disabled.
+
+#### Ada's Solutions:
 
 ```html
 <!DOCTYPE html>
